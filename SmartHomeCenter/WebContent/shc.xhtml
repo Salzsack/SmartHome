@@ -10,17 +10,6 @@
 	<title>SmartHomeCenter</title>
 </h:head>
 <h:body>
-	<h:form id="loginForm" prependId="false">
-		<h:outputLabel id="usernameLabel" value="Username:" />
-		<p:inputText id="usernameInput" value="#{userController.enteredUsername}" />
-		<h:outputLabel id="passwordLabel" value="Password:" />
-		<p:inputText id ="passwordInput" value="#{userController.enteredPassword}" />
-		<p>
-			<p:commandButton id="loginButton" value="Login" action="#{userController.checkCredentials}" update="message" />
-		</p>
-		<p>
-			<p:message for="usernameInput" id="message" />
-		</p>
-	</h:form>
+	<h:outputLabel value="#{userController.enteredUsername}" />
 </h:body>
 </html>
