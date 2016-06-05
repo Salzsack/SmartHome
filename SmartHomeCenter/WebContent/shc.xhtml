@@ -7,9 +7,16 @@
       xmlns:p="http://primefaces.org/ui">
 <h:head>    
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel='stylesheet' type='text/css' href='css/bootstrap.css' />  
+    <link rel='stylesheet' type='text/css' href='css/theme.css' />
 	<title>SmartHomeCenter</title>
 </h:head>
 <h:body>
-	<h:outputLabel value="#{userController.enteredUsername}" />
+	<div class="container">
+		<div class="jumbotron">
+			<h:outputLabel value="#{userController.enteredUsername}" />
+		</div>
+	</div>
+	<script src="js/bootstrap.js" />
 </h:body>
 </html>

@@ -8,6 +8,8 @@ package de.cl.smarthomecenter.controller;
 
 import java.io.IOException;
 import java.io.Serializable;
+
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
@@ -51,12 +53,14 @@ public class UserController implements Serializable{
 	
 	public String checkCredentials(){
 		
-		if(true){
+		if(this.enteredPassword.equals("admin") && this.enteredUsername.equals("admin"))
 			try {
 				FacesContext.getCurrentInstance().getExternalContext().redirect("shc.xhtml");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		else{
+			FacesContext.getCurrentInstance().addMessage("usernameInput", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Input error!", "Please enter Username and Password."));
 		}
 		return "success";
 	}

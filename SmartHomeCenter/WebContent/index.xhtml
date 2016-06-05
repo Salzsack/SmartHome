@@ -7,20 +7,27 @@
       xmlns:p="http://primefaces.org/ui">
 <h:head>    
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel='stylesheet' type='text/css' href='css/bootstrap.css' />  
+    <link rel='stylesheet' type='text/css' href='css/theme.css' /> 
 	<title>SmartHomeCenter</title>
 </h:head>
 <h:body>
-	<h:form id="loginForm" prependId="false">
-		<h:outputLabel id="usernameLabel" value="Username:" />
-		<p:inputText id="usernameInput" value="#{userController.enteredUsername}" />
-		<h:outputLabel id="passwordLabel" value="Password:" />
-		<p:inputText id ="passwordInput" value="#{userController.enteredPassword}" />
-		<p>
-			<p:commandButton id="loginButton" value="Login" action="#{userController.checkCredentials}" update="message" />
-		</p>
-		<p>
-			<p:message for="usernameInput" id="message" />
-		</p>
-	</h:form>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>SmartHomeCenter</h1>
+			<h:form id="loginForm" prependId="false" styleClass="form-horizontal">
+				<h:outputLabel id="usernameLabel" value="Username:" styleClass="control-label" />
+				<p:inputText id="usernameInput" value="#{userController.enteredUsername}" styleClass="form-control" />
+				<h:outputLabel id="passwordLabel" value="Password:" styleClass="control-label" />
+				<p:password id ="passwordInput" value="#{userController.enteredPassword}" styleClass="form-control" />
+				<p>
+					<p:commandButton id="loginButton" value="Login" action="#{userController.checkCredentials}" update="message" styleClass="btn btn-primary" style="margin-top: 10px;" />
+				</p>
+				<p>
+					<p:message for="usernameInput" id="message" />
+				</p>
+			</h:form>
+		</div>
+	</div>
 </h:body>
 </html>
